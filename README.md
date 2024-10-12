@@ -1,1 +1,5 @@
-# Project Setup
+- Added UserRepository to abstract database access logic for User model.
+- Created UserService to handle business logic and communication with UserRepository.
+- Integrated bcrypt for password hashing and secure storage.
+- Refactored UserController to interact with UserService for user registration, login, and CRUD operations.
+- Enhanced code maintainability by separating concerns: database access, business logic, and HTTP handling.
