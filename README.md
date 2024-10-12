@@ -1,1 +1,1 @@
-# VE_connected_ecommerce
+# Project Setup
