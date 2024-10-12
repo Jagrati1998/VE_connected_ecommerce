@@ -1,5 +1,3 @@
-- Added UserRepository to abstract database access logic for User model.
-- Created UserService to handle business logic and communication with UserRepository.
-- Integrated bcrypt for password hashing and secure storage.
-- Refactored UserController to interact with UserService for user registration, login, and CRUD operations.
-- Enhanced code maintainability by separating concerns: database access, business logic, and HTTP handling.
+User Management: Register, update, delete users with secure password hashing using bcrypt.
+Product Management: Create, update, delete, and list products with pagination support.
+Order Management: Create orders for users and view order details.
