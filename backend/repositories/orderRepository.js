@@ -9,6 +9,9 @@ class OrderRepository {
   async findById(id) {
     return await Order.findById(id).populate('products.productId');
   }
+  async findAll() {
+    return await Order.find();
+  }
 
   async findByUserId(userId) {
     return await Order.find({ userId }).populate('products.productId');

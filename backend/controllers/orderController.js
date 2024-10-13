@@ -10,7 +10,14 @@ class OrderController {
       res.status(400).json({ message: error.message });
     }
   }
-
+  async listOrders(req, res) {
+    try {
+      const user = await orderService.listOrders();
+      res.status(200).json(user);
+    } catch (error) {
+      res.status(404).json({ message: error.message });
+    }
+  }
   async getOrder(req, res) {
     try {
       const order = await orderService.getOrderById(req.params.id);

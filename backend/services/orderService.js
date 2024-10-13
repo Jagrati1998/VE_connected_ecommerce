@@ -21,7 +21,9 @@ class OrderService {
 
     return order;
   }
-
+  async listOrders() {
+    return await orderRepository.findAll();
+  }
   async getOrderById(id) {
     const order = await orderRepository.findById(id);
     if (!order) {

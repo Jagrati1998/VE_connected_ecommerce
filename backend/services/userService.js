@@ -12,7 +12,9 @@ class UserService {
     return { user, token };
   
   }
-
+  async listUsers() {
+    return await userRepository.findAll();
+  }
   async getUserById(id) {
     const user = await userRepository.findById(id);
     if (!user) {

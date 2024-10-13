@@ -9,7 +9,14 @@ class UserController {
       res.status(400).json({ message: error.message });
     }
   }
-
+  async listUsers(req, res) {
+    try {
+      const user = await userService.listUsers();
+      res.status(200).json(user);
+    } catch (error) {
+      res.status(404).json({ message: error.message });
+    }
+  }
   async getUser(req, res) {
     try {
       const user = await userService.getUserById(req.params.id);
