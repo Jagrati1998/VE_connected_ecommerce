@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile  # Optional if your Dockerfile is named "Dockerfile"
+    image: e-commerce-backend-app:latest  # Specify the image name
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/ecommerce
+      - JWT_SECRET=f7e1f4d725b1c6b457b937a5f2d6c3af91b9b654cb4d994eeb7f94bdf7ea1fd76a6f8e63bc1acfe80e8e2adf303627feef86b1e82a6c3d455d5d4d3c7bb64f29
+      - PORT=5000
+      - JWT_EXPIRES_IN=7d
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:4.4
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
+    driver: local
