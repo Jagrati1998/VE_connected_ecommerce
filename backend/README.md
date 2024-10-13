@@ -1,6 +1,5 @@
-    User Management: Register, update, delete, and fetch user details.
-    Product Management: Create, update, delete, and list products with pagination.
-    Order Management: Create, update, list, and fetch orders.
-    MongoDB as the database with Mongoose for ORM.
-    RESTful API with Express routing.
-    Environment configuration with dotenv.
+User Registration and Login with JWT-based authentication.
+Create, Read, Update, and Delete (CRUD) operations for products.
+JWT Authentication for protected routes.
+Password hashing with bcrypt.
+Secure environment variable management.   

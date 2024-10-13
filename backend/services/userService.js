@@ -2,9 +2,15 @@ const userRepository = require('../repositories/userRepository');
 
 class UserService {
   async registerUser(userData) {
-    // Perform business logic, validation, etc.
+    const existingUser = await userRepository.findByEmail(userData.email);
+    if (existingUser) {
+      throw new Error('Email already in use');
+    }
+
     const user = await userRepository.create(userData);
-    return user;
+    const token = user.generateAuthToken();
+    return { user, token };
+  
   }
 
   async getUserById(id) {

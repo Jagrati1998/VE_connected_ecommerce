@@ -9,7 +9,9 @@ class UserRepository {
   async findById(id) {
     return await User.findById(id);
   }
-
+  async findByEmail(email) {
+    return await User.findOne({ email });
+  }
   async findAll() {
     return await User.find();
   }
