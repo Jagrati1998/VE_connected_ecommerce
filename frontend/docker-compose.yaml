@@ -1,0 +1,9 @@
+version: '3'
+services:
+  react-app:
+    build:
+      context: .  # Path to the Dockerfile (current directory)
+      dockerfile: Dockerfile  # Name of the Dockerfile to use (default is "Dockerfile")
+    ports:
+      - "3000:3000"  # Map port 3000 on host to port 3000 in the container
+    
